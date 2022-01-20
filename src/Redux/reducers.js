@@ -15,9 +15,9 @@ export function Reducer(
         count: state.count + 1,
       };
     case Remove_Todo:
+      console.log(action);
       return {
-        ...state,
-        todos: state.todos.filter((todo) => todo.id !== action.payload),
+        todos: state.todos.filter((todo) => todo.id !== action.id),
         count: state.count - 1,
       };
     default:

@@ -6,13 +6,13 @@ function ToDo(props) {
 
     const {dispatch } = props;
     const RemoveTodo = (id) => {
-        dispatch(Remove_Todo(id));
+        dispatch({type : 'Remove_ToDo', id}) ;
     }
 
     const ToDoItem = props.todos.map((todo, index) => (
         <li key={index}>
           <b>{todo.title}</b>
-          <button onClick={() => RemoveTodo(index)}>x</button>
+          <button onClick={() => RemoveTodo(todo.id)}>x</button>
           <br />
           
         </li>
